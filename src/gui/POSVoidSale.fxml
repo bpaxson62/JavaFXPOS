@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.web.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="672.9999000000025" prefWidth="1024.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="gui.POSVoidSaleController">
+  <children>
+    <BorderPane prefHeight="598.0" prefWidth="803.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <bottom>
+        <HBox prefHeight="67.0" prefWidth="1024.0">
+          <children>
+            <AnchorPane id="AnchorPane" prefHeight="100.0" prefWidth="1024.0" styleClass="border" HBox.hgrow="ALWAYS">
+              <children>
+                <HBox id="HBox" alignment="CENTER" layoutY="23.0" spacing="5.0" AnchorPane.leftAnchor="452.0" AnchorPane.rightAnchor="452.0">
+                  <children>
+                    <Label text="Powered by Snowflake" textFill="WHITE" />
+                  </children>
+                </HBox>
+              </children>
+              <stylesheets>
+                <URL value="@user.css" />
+              </stylesheets>
+            </AnchorPane>
+          </children>
+        </HBox>
+      </bottom>
+      <center>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+          <children>
+            <HBox id="HBox" alignment="CENTER" layoutY="26.0" spacing="5.0" AnchorPane.leftAnchor="352.0" AnchorPane.rightAnchor="352.0">
+              <children>
+                <Group id="Group">
+                  <children>
+                    <ListView layoutX="0.0" layoutY="69.0" prefHeight="309.0" prefWidth="320.0" />
+                    <Label layoutX="10.0" layoutY="416.0" text="Subtotal:" />
+                    <Label layoutX="10.0" layoutY="432.0" text="Taxes" />
+                    <Label layoutX="10.0" layoutY="448.0" text="Total:" />
+                    <Label layoutX="82.0" layoutY="416.0" text="\$0.00" />
+                    <Label layoutX="82.0" layoutY="432.0" text="\$0.00" />
+                    <Label layoutX="82.0" layoutY="448.0" text="\$0.00" />
+                    <Button layoutX="229.0" layoutY="427.0" mnemonicParsing="false" onAction="#handleVoidSale" text="Void Sale" />
+                    <Button layoutX="207.0" layoutY="0.0" mnemonicParsing="false" onAction="#handleGetOrder" prefWidth="111.0" text="Get Order" />
+                    <TextField layoutX="10.0" layoutY="0.0" prefWidth="150.0" text="Enter Sale ID..." />
+                  </children>
+                </Group>
+              </children>
+            </HBox>
+          </children>
+          <stylesheets>
+            <URL value="@user.css" />
+          </stylesheets>
+        </AnchorPane>
+      </center>
+      <top>
+        <HBox minHeight="76.0" prefHeight="90.0" prefWidth="1024.0">
+          <children>
+            <AnchorPane id="AnchorPane" minHeight="76.0" prefHeight="116.0" prefWidth="1024.0" styleClass="border" HBox.hgrow="ALWAYS">
+              <children>
+                <HBox id="HBox" alignment="CENTER" prefHeight="29.0" prefWidth="132.0" spacing="5.0" AnchorPane.rightAnchor="19.0" AnchorPane.topAnchor="27.0">
+                  <children>
+                    <Label fx:id="labelUserName" prefHeight="21.000091552734375" text="UserName" textFill="WHITE" />
+                    <Button mnemonicParsing="false" onAction="#handleLogOff" prefHeight="21.999999284744263" text="Logoff" />
+                  </children>
+                </HBox>
+                <HBox id="HBox" alignment="CENTER" layoutY="38.0" spacing="5.0" AnchorPane.leftAnchor="471.0" AnchorPane.rightAnchor="470.0">
+                  <children>
+                    <Label fx:id="labelCompanyName" text="CompanyName" textFill="WHITE" HBox.hgrow="NEVER" />
+                  </children>
+                </HBox>
+                <HBox id="HBox" alignment="CENTER" spacing="5.0" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="27.0">
+                  <children>
+                    <Button mnemonicParsing="false" onAction="#handleAdmin" prefHeight="21.999999284744263" text="Admin" />
+                  </children>
+                </HBox>
+                <HBox id="HBox" alignment="CENTER" spacing="5.0" AnchorPane.bottomAnchor="42.0" AnchorPane.leftAnchor="102.0">
+                  <children>
+                    <Button mnemonicParsing="false" onAction="#handleBackToPOS" text="Back" />
+                    <Label text="POS: Void Sale" textFill="WHITE" />
+                  </children>
+                </HBox>
+              </children>
+              <stylesheets>
+                <URL value="@user.css" />
+              </stylesheets>
+            </AnchorPane>
+          </children>
+        </HBox>
+      </top>
+    </BorderPane>
+  </children>
+</AnchorPane>

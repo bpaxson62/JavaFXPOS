@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.web.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="672.9999000000025" prefWidth="1024.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="gui.POSNewSaleController">
+  <children>
+    <BorderPane prefHeight="598.0" prefWidth="803.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <bottom>
+        <HBox prefHeight="67.0" prefWidth="1024.0">
+          <children>
+            <AnchorPane id="AnchorPane" prefHeight="100.0" prefWidth="1024.0" styleClass="border" HBox.hgrow="ALWAYS">
+              <children>
+                <HBox id="HBox" alignment="CENTER" layoutY="23.0" spacing="5.0" AnchorPane.leftAnchor="452.0" AnchorPane.rightAnchor="452.0">
+                  <children>
+                    <Label text="Powered by Snowflake" textFill="WHITE" />
+                  </children>
+                </HBox>
+              </children>
+              <stylesheets>
+                <URL value="@user.css" />
+              </stylesheets>
+            </AnchorPane>
+          </children>
+        </HBox>
+      </bottom>
+      <center>
+        <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
+          <tabs>
+            <Tab text="Item Catalog">
+              <content>
+                <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                  <children>
+                    <SplitPane dividerPositions="0.6135029354207436" focusTraversable="true" prefHeight="485.0" prefWidth="1024.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                      <items>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                          <children>
+                            <HBox id="HBox" alignment="CENTER" spacing="5.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="21.0" />
+                            <ComboBox layoutX="106.0" layoutY="21.0" prefHeight="21.0" prefWidth="149.0" promptText="Select a Category">
+                              <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                  <String fx:value="Item 1" />
+                                  <String fx:value="Item 2" />
+                                  <String fx:value="Item 3" />
+                                </FXCollections>
+                              </items>
+                            </ComboBox>
+                            <Label layoutX="47.0" layoutY="24.0" text="Category:" />
+                            <ListView id="listViewNewSale" fx:id="listViewNewSaleCatalog" layoutX="73.0" layoutY="77.0" prefHeight="329.0" prefWidth="466.0" />
+                          </children>
+                        </AnchorPane>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                          <children>
+                            <HBox id="HBox" alignment="CENTER" spacing="5.0" AnchorPane.leftAnchor="18.0" AnchorPane.rightAnchor="32.0" AnchorPane.topAnchor="32.0">
+                              <children>
+                                <Group id="Group">
+                                  <children>
+                                    <Button layoutX="260.0" layoutY="349.0" mnemonicParsing="false" onAction="#handleAddToCart" text="Add to Cart" />
+                                    <Label layoutX="3.0" layoutY="0.0" text="Item:" />
+                                    <Label layoutX="3.0" layoutY="66.0" text="Description:" />
+                                    <TextArea fx:id="textAreaItemDescription" editable="false" layoutX="31.0" layoutY="100.0" prefHeight="220.0" prefWidth="287.0" wrapText="true" />
+                                    <Label layoutX="3.0" layoutY="34.0" text="Category:" />
+                                    <Label id="labelCategory" fx:id="labelItemCategory" layoutX="59.0" layoutY="34.0" text="CategoryName" />
+                                    <Label layoutX="0.0" layoutY="348.0" text="Price: $" />
+                                    <Label fx:id="labelItemPrice" layoutX="53.0" layoutY="348.0" prefWidth="70.0" text="0.00" />
+                                    <Label fx:id="labelItemName" layoutX="61.0" layoutY="1.0" text="ItemName" />
+                                  </children>
+                                </Group>
+                              </children>
+                            </HBox>
+                          </children>
+                          <stylesheets>
+                            <URL value="@user.css" />
+                          </stylesheets>
+                        </AnchorPane>
+                      </items>
+                    </SplitPane>
+                  </children>
+                </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="View Cart">
+              <content>
+                <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                  <children>
+                    <HBox id="HBox" alignment="CENTER" layoutY="42.0" spacing="5.0" AnchorPane.leftAnchor="340.0" AnchorPane.rightAnchor="339.0">
+                      <children>
+                        <Group id="Group">
+                          <children>
+                            <ListView fx:id="listViewNewSaleCart" layoutX="0.0" layoutY="56.0" prefHeight="289.0" prefWidth="345.0" />
+                            <Label layoutX="0.0" layoutY="371.0" text="Subtotal: $" />
+                            <Button layoutX="0.0" layoutY="0.0" mnemonicParsing="false" onAction="#handleClearCart" prefWidth="111.0" text="Clear Cart" />
+                            <Button layoutX="234.0" layoutY="0.0" mnemonicParsing="false" onAction="#handleRemoveFromCart" text="Remove Selected" />
+                            <Button layoutX="235.0" layoutY="377.0" mnemonicParsing="false" onAction="#handleCheckout" text="Checkout" />
+                            <Label fx:id="subTotal" layoutX="63.0" layoutY="371.0" text="0.00" />
+                            <Label layoutX="0.0" layoutY="408.0" text="Total: $" />
+                            <Label fx:id="total" layoutX="63.0" layoutY="408.0" text="0.00" />
+                            <Label layoutX="0.0" layoutY="389.0" text="Taxes: $" />
+                            <Label fx:id="tax" layoutX="63.0" layoutY="389.0" text="0.00" />
+                          </children>
+                        </Group>
+                      </children>
+                    </HBox>
+                  </children>
+                  <stylesheets>
+                    <URL value="@user.css" />
+                  </stylesheets>
+                </AnchorPane>
+              </content>
+            </Tab>
+          </tabs>
+        </TabPane>
+      </center>
+      <top>
+        <HBox minHeight="76.0" prefHeight="90.0" prefWidth="1024.0">
+          <children>
+            <AnchorPane id="AnchorPane" minHeight="76.0" prefHeight="116.0" prefWidth="1024.0" styleClass="border" HBox.hgrow="ALWAYS">
+              <children>
+                <HBox id="HBox" alignment="CENTER" prefHeight="29.0" prefWidth="132.0" spacing="5.0" AnchorPane.rightAnchor="19.0" AnchorPane.topAnchor="27.0">
+                  <children>
+                    <Label fx:id="labelUserName" prefHeight="21.000091552734375" text="UserName" textFill="WHITE" />
+                    <Button mnemonicParsing="false" onAction="#handleLogOff" prefHeight="21.999999284744263" text="Logoff" />
+                  </children>
+                </HBox>
+                <HBox id="HBox" alignment="CENTER" layoutY="38.0" spacing="5.0" AnchorPane.leftAnchor="471.0" AnchorPane.rightAnchor="470.0">
+                  <children>
+                    <Label fx:id="labelCompanyName" text="CompanyName" textFill="WHITE" HBox.hgrow="NEVER" />
+                  </children>
+                </HBox>
+                <HBox id="HBox" alignment="CENTER" spacing="5.0" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="27.0">
+                  <children>
+                    <Button mnemonicParsing="false" onAction="#handleAdmin" prefHeight="21.999999284744263" text="Admin" />
+                  </children>
+                </HBox>
+                <HBox id="HBox" alignment="CENTER" spacing="5.0" AnchorPane.bottomAnchor="42.0" AnchorPane.leftAnchor="102.0">
+                  <children>
+                    <Button mnemonicParsing="false" onAction="#handleBackToPOS" text="Back" />
+                    <Label text="POS: New Sale" textFill="WHITE" />
+                  </children>
+                </HBox>
+              </children>
+              <stylesheets>
+                <URL value="@user.css" />
+              </stylesheets>
+            </AnchorPane>
+          </children>
+        </HBox>
+      </top>
+    </BorderPane>
+  </children>
+</AnchorPane>

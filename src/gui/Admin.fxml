@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.web.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="672.9999000000025" prefWidth="1024.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="gui.AdminController">
+  <children>
+    <BorderPane prefHeight="598.0" prefWidth="803.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <bottom>
+        <HBox prefHeight="67.0" prefWidth="1024.0" BorderPane.alignment="TOP_LEFT">
+          <children>
+            <AnchorPane id="AnchorPane" minHeight="-1.0" minWidth="-1.0" prefHeight="100.0" prefWidth="1024.0" style="" styleClass="border" HBox.hgrow="ALWAYS">
+              <children>
+                <HBox id="HBox" alignment="CENTER" spacing="5.0" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="452.0" AnchorPane.rightAnchor="452.0">
+                  <children>
+                    <Label minWidth="-Infinity" text="Powered by Snowflake" textFill="WHITE" HBox.hgrow="NEVER" />
+                  </children>
+                </HBox>
+              </children>
+              <stylesheets>
+                <URL value="@admin.css" />
+              </stylesheets>
+            </AnchorPane>
+          </children>
+        </HBox>
+      </bottom>
+      <center>
+        <TabPane prefHeight="200.0" prefWidth="200.0" style="" tabClosingPolicy="UNAVAILABLE">
+          <tabs>
+            <Tab text="Add Item">
+              <content>
+                <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="">
+                  <children>
+                    <HBox id="HBox" alignment="CENTER" prefHeight="457.0" prefWidth="424.0" spacing="5.0" style="-fx-background-color: #FFFFFF;" AnchorPane.bottomAnchor="-0.48" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="300.0" AnchorPane.topAnchor="42.48">
+                      <children>
+                        <Group id="Group">
+                          <children>
+                            <TextArea id="getDescription" fx:id="setDescription" layoutX="0.0" layoutY="138.0" prefHeight="235.0" prefWidth="421.0" wrapText="true" />
+                            <TextField id="getId" fx:id="setId" layoutX="48.0" layoutY="54.0" prefWidth="83.0" />
+                            <Button layoutX="0.0" layoutY="384.0" mnemonicParsing="false" onAction="#createItem" prefWidth="418.0" text="Create Item" />
+                            <TextField id="getPrice" fx:id="setPrice" layoutX="48.0" layoutY="81.0" prefWidth="83.0" />
+                            <Label id="getItemName" layoutX="1.0" layoutY="24.0" text="Item:" />
+                            <Label layoutX="144.0" layoutY="57.0" text="Category:" />
+                            <Label id="getItemId" layoutX="0.0" layoutY="57.0" text="ID#:" />
+                            <Label layoutX="0.0" layoutY="86.0" text="Price:" />
+                            <Button layoutX="321.0" layoutY="100.0" mnemonicParsing="false" onAction="#browseImages" prefHeight="22.0" prefWidth="73.0" text="Browse" />
+                            <TextField id="getItem" fx:id="setItem" layoutX="48.0" layoutY="21.0" prefWidth="240.0" />
+                            <AnchorPane id="AnchorPane" layoutX="302.0" layoutY="0.0" style="-fx-background-color: #ACACAA;">
+                              <children>
+                                <ImageView fx:id="editImage" fitHeight="86.99993909200042" fitWidth="115.99992370605469" layoutX="0.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" />
+                              </children>
+                            </AnchorPane>
+                            <ComboBox fx:id="setCategoryList" layoutX="205.0" layoutY="55.0" prefHeight="21.0" prefWidth="83.0">
+                              <items>
+                                <FXCollections fx:factory="observableArrayList" />
+                              </items>
+                            </ComboBox>
+                            <Label id="addItemLabel" fx:id="addItemLabel1" layoutX="135.0" layoutY="107.0" prefHeight="27.0" prefWidth="120.0" text="State: No change!" />
+                          </children>
+                        </Group>
+                      </children>
+                    </HBox>
+                    <HBox id="HBox" alignment="CENTER" layoutY="-3.0" spacing="5.0" AnchorPane.leftAnchor="299.0" AnchorPane.rightAnchor="300.0">
+                      <children>
+                        <AnchorPane prefHeight="45.0" prefWidth="424.0000999999975" style="-fx-background-color: #FFFFFF;" HBox.hgrow="ALWAYS">
+                          <children>
+                            <HBox id="HBox" alignment="CENTER" layoutY="16.0" spacing="5.0" AnchorPane.leftAnchor="188.0" AnchorPane.rightAnchor="187.0">
+                              <children>
+                                <Text fill="BLACK" scaleX="3.665254985000882" scaleY="2.689153389791661" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Item" HBox.hgrow="ALWAYS" />
+                              </children>
+                            </HBox>
+                          </children>
+                        </AnchorPane>
+                      </children>
+                    </HBox>
+                  </children>
+                  <stylesheets>
+                    <URL value="@admin.css" />
+                  </stylesheets>
+                </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Edit Item">
+              <content>
+                <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="" styleClass="null">
+                  <children>
+                    <HBox id="HBox" alignment="CENTER" prefHeight="457.0" prefWidth="424.0" spacing="5.0" style="-fx-background-color: #FFFFFF;" AnchorPane.bottomAnchor="-0.48" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="300.0" AnchorPane.topAnchor="42.48">
+                      <children>
+                        <Group id="Group">
+                          <children>
+                            <TextArea fx:id="getDescription" layoutX="7.0" layoutY="194.0" prefHeight="179.0" prefWidth="407.0" wrapText="true" />
+                            <TextField fx:id="getId" layoutX="42.0" layoutY="75.0" prefWidth="83.0" />
+                            <Button layoutX="6.0" layoutY="382.0" mnemonicParsing="false" onAction="#editItem" prefHeight="24.0" prefWidth="397.0" text="Edit Item" />
+                            <TextField fx:id="getPrice" layoutX="42.0" layoutY="106.0" prefWidth="83.0" />
+                            <Label id="getItemName" layoutX="11.0" layoutY="43.0" text="Item:" />
+                            <Label layoutX="137.0" layoutY="75.0" text="Category:" />
+                            <Label id="getItemId" layoutX="16.0" layoutY="79.0" prefHeight="22.000030517578125" text="ID#:" />
+                            <Label layoutX="10.0" layoutY="109.0" text="Price:" />
+                            <Button layoutX="291.0" layoutY="119.0" mnemonicParsing="false" onAction="#browseImages2" prefHeight="35.0" prefWidth="73.0" text="Browse" />
+                            <TextField fx:id="getItem" layoutX="42.0" layoutY="40.0" prefWidth="240.0" />
+                            <AnchorPane id="AnchorPane" layoutX="296.0" layoutY="67.0" minHeight="39.0" minWidth="69.0" prefHeight="45.000030517578125" prefWidth="71.0" style="-fx-background-color: #ACACAA;&#10;">
+                              <children>
+                                <ImageView id="editImage" fx:id="editImage2" fitHeight="59.000030517578125" fitWidth="78.66670402244338" layoutX="2.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" />
+                              </children>
+                            </AnchorPane>
+                            <TextField id="sea" fx:id="searchBox" layoutX="42.0" layoutY="11.0" prefWidth="240.0" />
+                            <Label layoutX="0.0" layoutY="14.0" text="Search:" />
+                            <Button layoutX="289.0" layoutY="0.0" minHeight="16.0" mnemonicParsing="false" onAction="#searchItems" prefHeight="22.000099999997474" prefWidth="84.0" text="Search" />
+                            <Button layoutX="289.0" layoutY="33.0" minHeight="21.999900000002526" mnemonicParsing="false" onAction="#deleteItem" prefHeight="22.0" prefWidth="84.0" text="Delete Item" />
+                            <Label fx:id="addItemLabel2" layoutX="143.0" layoutY="128.0" prefHeight="35.0" prefWidth="120.0" text="State: No change!" />
+                            <ComboBox fx:id="getCategoryList" layoutX="199.0" layoutY="72.0" prefHeight="21.0" prefWidth="75.0">
+                              <items>
+                                <FXCollections fx:factory="observableArrayList" />
+                              </items>
+                            </ComboBox>
+                          </children>
+                        </Group>
+                      </children>
+                    </HBox>
+                    <HBox id="HBox" alignment="CENTER" layoutY="-3.0" spacing="5.0" AnchorPane.leftAnchor="299.0" AnchorPane.rightAnchor="300.0">
+                      <children>
+                        <AnchorPane prefHeight="45.0" prefWidth="424.0000999999975" style="-fx-background-color: #FFFFFF;" HBox.hgrow="ALWAYS">
+                          <children>
+                            <HBox id="HBox" alignment="CENTER" layoutY="16.0" spacing="5.0" AnchorPane.leftAnchor="188.0" AnchorPane.rightAnchor="187.0">
+                              <children>
+                                <Text fill="BLACK" scaleX="3.665254985000882" scaleY="2.689153389791661" strokeType="OUTSIDE" strokeWidth="0.0" text="Edit Item" HBox.hgrow="ALWAYS" />
+                              </children>
+                            </HBox>
+                          </children>
+                        </AnchorPane>
+                      </children>
+                    </HBox>
+                  </children>
+                  <stylesheets>
+                    <URL value="@admin.css" />
+                  </stylesheets>
+                </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Edit Users">
+              <content>
+                <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="">
+                  <children>
+                    <HBox id="HBox" alignment="CENTER" prefHeight="457.0" prefWidth="424.0" spacing="5.0" style="-fx-background-color: #FFFFFF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="306.0" AnchorPane.rightAnchor="294.0" AnchorPane.topAnchor="42.0">
+                      <children>
+                        <Group id="Group">
+                          <children>
+                            <AnchorPane id="AnchorPane" layoutX="-3.0" layoutY="0.0" prefHeight="422.798828125">
+                              <children>
+                                <Button layoutX="26.0" layoutY="140.0" mnemonicParsing="false" onAction="#saveUser" prefWidth="387.0" text="Save User" />
+                                <Label id="getItemName" layoutX="22.0" layoutY="46.0" text="Name:" />
+                                <Label layoutX="20.0" layoutY="71.0" text="Password:" />
+                                <TextField id="getItem" fx:id="getName" layoutX="91.0" layoutY="43.0" prefWidth="240.0" />
+                                <AnchorPane id="AnchorPane" layoutX="316.0" layoutY="0.0" style="-fx-background-color: #ACACAA;" />
+                                <AnchorPane id="AnchorPane" layoutX="316.0" layoutY="22.0" style="-fx-background-color: #ACACAA;&#10;" />
+                                <TextField fx:id="searchBox2" layoutX="91.0" layoutY="14.0" prefWidth="240.0" />
+                                <Label layoutX="20.0" layoutY="14.0" text="Search:" />
+                                <PasswordField fx:id="getPassword" layoutX="91.0" layoutY="71.0" prefWidth="241.0" />
+                                <CheckBox fx:id="adminAccess" layoutX="173.0" layoutY="110.0" mnemonicParsing="false" text="Admin Access" />
+                                <Button layoutX="6.0" layoutY="396.0" mnemonicParsing="false" onAction="#deleteUser" prefHeight="20.0" prefWidth="416.5" text="Delete User" />
+                                <ListView fx:id="userList" layoutX="8.0" layoutY="219.0" onMouseClicked="#selectUser" prefHeight="154.0" prefWidth="421.0" />
+                                <Button id="searchUsers" layoutX="341.0" layoutY="8.0" mnemonicParsing="false" onAction="#searchUsers" prefHeight="21.999900000002526" prefWidth="73.0" text="Search" />
+                                <Label fx:id="addUserLabel1" layoutX="170.0" layoutY="195.0" text="State: No change!" />
+                                <Button id="createUser" layoutX="341.0" layoutY="43.0" mnemonicParsing="false" onAction="#createUser" prefHeight="45.000003814697266" prefWidth="73.0" text="Create" />
+                                <TextField fx:id="setUserId" layoutX="91.0" layoutY="101.0" prefWidth="66.0" />
+                                <Label layoutX="22.0" layoutY="101.0" text="Id:" />
+                              </children>
+                            </AnchorPane>
+                          </children>
+                        </Group>
+                      </children>
+                    </HBox>
+                    <HBox id="HBox" alignment="CENTER" layoutY="-3.0" spacing="5.0" AnchorPane.leftAnchor="299.0" AnchorPane.rightAnchor="300.0">
+                      <children>
+                        <AnchorPane prefHeight="45.0" prefWidth="424.0000999999975" style="-fx-background-color: #FFFFFF;" HBox.hgrow="ALWAYS">
+                          <children>
+                            <HBox id="HBox" alignment="CENTER" layoutY="16.0" spacing="5.0" AnchorPane.leftAnchor="188.0" AnchorPane.rightAnchor="187.0">
+                              <children>
+                                <Text fill="BLACK" scaleX="3.665254985000882" scaleY="2.689153389791661" strokeType="OUTSIDE" strokeWidth="0.0" text="Edit Users" HBox.hgrow="ALWAYS" />
+                              </children>
+                            </HBox>
+                          </children>
+                        </AnchorPane>
+                      </children>
+                    </HBox>
+                  </children>
+                  <stylesheets>
+                    <URL value="@admin.css" />
+                  </stylesheets>
+                </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Create Category">
+              <content>
+                <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="">
+                  <children>
+                    <HBox id="HBox" alignment="CENTER" prefHeight="457.0" prefWidth="424.0" spacing="5.0" style="-fx-background-color: #FFFFFF;" AnchorPane.bottomAnchor="-2.0" AnchorPane.leftAnchor="297.5" AnchorPane.rightAnchor="302.5" AnchorPane.topAnchor="44.0">
+                      <children>
+                        <Group id="Group">
+                          <children>
+                            <Button layoutX="0.0" layoutY="128.0" mnemonicParsing="false" onAction="#saveCategory" prefWidth="416.0" text="Save Category" />
+                            <Label id="getItemName" layoutX="31.0" layoutY="49.0" text="Name:" />
+                            <TextField id="getItem" fx:id="getCatName" layoutX="89.0" layoutY="43.0" prefWidth="240.0" />
+                            <AnchorPane id="AnchorPane" layoutX="308.0" layoutY="0.0" style="-fx-background-color: #ACACAA;" />
+                            <AnchorPane id="AnchorPane" layoutX="308.0" layoutY="22.0" style="-fx-background-color: #ACACAA;&#10;" />
+                            <TextField fx:id="searchBox3" layoutX="89.0" layoutY="14.0" prefWidth="240.0" />
+                            <Label layoutX="28.0" layoutY="17.0" text="Search:" />
+                            <Button layoutX="0.0" layoutY="388.0" mnemonicParsing="false" onAction="#deleteCategory" prefWidth="419.000022070315" text="Delete Category" />
+                            <ListView fx:id="catList" layoutX="1.0" layoutY="192.0" prefHeight="190.0" prefWidth="421.0" />
+                            <Button layoutX="340.0" layoutY="12.0" minHeight="16.0" mnemonicParsing="false" onAction="#searchCat" prefHeight="16.0" prefWidth="65.0" text="Search" />
+                            <Button layoutX="340.0" layoutY="42.0" minHeight="16.0" mnemonicParsing="false" onAction="#createCategory" prefHeight="16.0" prefWidth="65.0" text="Create" />
+                          </children>
+                        </Group>
+                      </children>
+                    </HBox>
+                    <HBox id="HBox" alignment="CENTER" layoutY="-3.0" spacing="5.0" AnchorPane.leftAnchor="299.0" AnchorPane.rightAnchor="300.0">
+                      <children>
+                        <AnchorPane minWidth="451.0" prefHeight="45.000099999997474" prefWidth="451.0" style="-fx-background-color: #FFFFFF;" HBox.hgrow="ALWAYS">
+                          <children>
+                            <HBox id="HBox" alignment="CENTER" layoutY="16.0" spacing="5.0" AnchorPane.leftAnchor="188.0" AnchorPane.rightAnchor="187.0">
+                              <children>
+                                <Text fill="BLACK" scaleX="3.665254985000882" scaleY="2.689153389791661" strokeType="OUTSIDE" strokeWidth="0.0" text="Create Category" HBox.hgrow="ALWAYS" />
+                              </children>
+                            </HBox>
+                          </children>
+                        </AnchorPane>
+                      </children>
+                    </HBox>
+                  </children>
+                  <stylesheets>
+                    <URL value="@admin.css" />
+                  </stylesheets>
+                </AnchorPane>
+              </content>
+            </Tab>
+          </tabs>
+        </TabPane>
+      </center>
+      <top>
+        <HBox minHeight="76.0" minWidth="-Infinity" prefHeight="76.0" prefWidth="1024.0">
+          <children>
+            <AnchorPane id="AnchorPane" minHeight="83.0" minWidth="-1.0" prefHeight="83.0" prefWidth="1024.0000999999975" style="" styleClass="border" HBox.hgrow="ALWAYS">
+              <children>
+                <Button minHeight="15.999999046325684" mnemonicParsing="false" onAction="#handlePOS" prefHeight="34.0" prefWidth="103.0" text="POS" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="27.0" />
+                <HBox id="HBox" alignment="CENTER" layoutY="27.0" spacing="5.0" AnchorPane.rightAnchor="14.0">
+                  <children>
+                    <Label minHeight="-1.0" minWidth="-Infinity" prefHeight="21.000091552734375" text="UserName" textFill="WHITE" />
+                    <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleLogOff" prefHeight="34.0" prefWidth="65.0" text="Logoff" />
+                    <Button id="EXIT" mnemonicParsing="false" onAction="#EXIT" prefHeight="34.0" prefWidth="73.0" text="EXIT" />
+                  </children>
+                </HBox>
+                <HBox id="HBox" alignment="CENTER" layoutY="38.0" spacing="5.0" AnchorPane.leftAnchor="471.0" AnchorPane.rightAnchor="470.0">
+                  <children>
+                    <Label fx:id="companyName" minHeight="-Infinity" minWidth="-Infinity" text="CompanyName" textFill="#dfdfdf" />
+                  </children>
+                </HBox>
+              </children>
+              <stylesheets>
+                <URL value="@admin.css" />
+              </stylesheets>
+            </AnchorPane>
+          </children>
+        </HBox>
+      </top>
+    </BorderPane>
+  </children>
+</AnchorPane>
